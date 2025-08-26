@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="title-container">
+            <h1 class="dashboard-title">
+                <span class="blue-text">Pharma</span>Cast AI
+            </h1>
+            <img src="assets/icon.png" alt="PharmaCast Icon" class="dashboard-icon">
+        </div>
+        <p class="tagline">Empowering pharmacies with smart insights!</p>
+    </header>
+
+    <!-- Summary Cards Section -->
+<section id="summary-cards">
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card" id="card-forecast">
+            <h3>Next 3 Months Forecast</h3>
+            <p>Total Sales: <span id="total-sales">Loading...</span></p>
+            <p>Total Revenue: <span id="total-revenue">Loading...</span></p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" id="card-top-low">
+            <h3>Top & Low Selling Drugs</h3>
+            <p>Top Selling: <span id="top-drug">Loading...</span></p>
+            <p>Least Selling: <span id="low-drug">Loading...</span></p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" id="card-trend">
+            <h3>Overall Sales Trend</h3>
+            <p>Sales Change: <span id="sales-change">Loading...</span></p>
+        </div>
+    </div>
+</section>
+
+
+<section id="data-section" class="data-cards">
+
+    <!-- Forecasted Data Card (Top) -->
+    <div class="data-card" id="forecasted-card">
+        <h3>Forecasted Data</h3>
+
+        <!-- Toggle switch for Chart/Table -->
+        <label class="switch">
+            <input type="checkbox" id="forecast-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span id="forecast-toggle-label">Table View</span>
+
+        <!-- Display area -->
+        <div id="forecast-display">
+            <!-- Forecasted Chart -->
+            <canvas id="forecast-chart"></canvas>
+
+            <table id="forecast-table">
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Antiinflammatory</th>
+                        <th>Antirheumatic</th>
+                        <th>Analgesics</th>
+                        <th>Antipyretics</th>
+                        <th>Psycholeptics</th>
+                        <th>Sedatives</th>
+                        <th>Bronchodilators</th>
+                        <th>Antihistamines</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data rows added via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Historical Data Card (Below) -->
+    <div class="data-card" id="historical-card">
+        <h3>Past Data</h3>
+
+        <!-- Filters -->
+        <div class="filters">
+            <label for="year-select">Year:</label>
+            <select id="year-select">
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+            </select>
+
+            <label for="quarter-select">Quarter:</label>
+            <select id="quarter-select">
+                <option value="Q1">Q1 (Jan-Mar)</option>
+                <option value="Q2">Q2 (Apr-Jun)</option>
+                <option value="Q3">Q3 (Jul-Sep)</option>
+                <option value="Q4">Q4 (Oct-Dec)</option>
+            </select>
+
+            <!-- Toggle switch for Chart/Table -->
+            <label class="switch">
+                <input type="checkbox" id="historical-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span id="historical-toggle-label">Table View</span>
+        </div>
+
+        <!-- Display area -->
+        <div id="historical-display">
+            <canvas id="historical-chart"></canvas>
+            <table id="historical-table" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Antiinflammatory</th>
+                        <th>Antirheumatic</th>
+                        <th>Analgesics</th>
+                        <th>Antipyretics</th>
+                        <th>Psycholeptics</th>
+                        <th>Sedatives</th>
+                        <th>Bronchodilators</th>
+                        <th>Antihistamines</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data rows added via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+    
+    
+    
+
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
